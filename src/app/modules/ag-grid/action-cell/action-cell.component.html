@@ -1,0 +1,34 @@
+<div class="flex h-full w-full items-center justify-center gap-3">
+    <ng-container *ngIf="showSettingIcon">
+        <button type="button" class="flex" (click)="onSetting()">
+            <mat-icon
+                class="text-[#3f3f3f] icon-size-5"
+                svgIcon="heroicons_outline:cog-6-tooth"
+            ></mat-icon>
+        </button>
+    </ng-container>
+    <ng-container *ngIf="showRemoveIcon">
+        <button type="button" class="flex" (click)="onRemove()">
+            <mat-icon
+                class="text-[#ff4081] icon-size-5"
+                svgIcon="heroicons_outline:trash"
+            ></mat-icon>
+        </button>
+    </ng-container>
+    <ng-container *ngIf="showUpdateIcon && !isNew">
+        <button type="button" class="flex" (click)="onEdit()">
+            <mat-icon
+                class="text-primary icon-size-5"
+                svgIcon="heroicons_outline:pencil-square"
+            ></mat-icon>
+        </button>
+    </ng-container>
+    <ng-container *ngIf="isNew">
+        <button type="button" class="flex" (click)="onSave()">
+            <mat-icon
+                class="text-primary icon-size-5"
+                svgIcon="heroicons_outline:check"
+            ></mat-icon>
+        </button>
+    </ng-container>
+</div>
